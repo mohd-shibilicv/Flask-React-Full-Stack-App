@@ -4,6 +4,11 @@ from config import app, db
 from models import Contact
 
 
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
+
+
 @app.route("/contacts", methods=["GET"])
 def get_contacts():
     contacts = Contact.query.all()
