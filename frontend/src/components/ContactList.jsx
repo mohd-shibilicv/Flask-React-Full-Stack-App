@@ -93,7 +93,7 @@ const ContactList = ({ fetchContacts, contacts }) => {
       lastName: values.last_name,
       email: values.email,
     };
-    const url = "http://127.0.0.1:5000/create_contact";
+    const url = "https://flask-react-crud-applicatio.onrender.com/create_contact";
     const options = {
       method: "POST",
       headers: {
@@ -139,7 +139,7 @@ const ContactList = ({ fetchContacts, contacts }) => {
 
   const onUpdate = async (values) => {
     try {
-      const url = `http://127.0.0.1:5000/update_contact/${selectedContact?.id}`;
+      const url = `https://flask-react-crud-applicatio.onrender.com/update_contact/${selectedContact?.id}`;
       const options = {
         method: "PATCH",
         headers: {
@@ -187,7 +187,7 @@ const ContactList = ({ fetchContacts, contacts }) => {
 
   const onDelete = async (id) => {
     try {
-      const url = `http://127.0.0.1:5000/delete_contact/${id}`;
+      const url = `https://flask-react-crud-applicatio.onrender.com/delete_contact/${id}`;
       const options = {
         method: "DELETE",
       };
@@ -231,9 +231,9 @@ const ContactList = ({ fetchContacts, contacts }) => {
           <TableHeader>
             <TableRow className="text-black dark:text-white">
               <TableHead className="w-[100px]">ID</TableHead>
-              <TableHead>First Name</TableHead>
-              <TableHead>Last Name</TableHead>
-              <TableHead className="text-right">Email</TableHead>
+              <TableHead className="text-center">First Name</TableHead>
+              <TableHead className="text-center">Last Name</TableHead>
+              <TableHead className="text-center">Email</TableHead>
               <TableHead className="text-center">Actions</TableHead>
             </TableRow>
           </TableHeader>
@@ -241,10 +241,10 @@ const ContactList = ({ fetchContacts, contacts }) => {
             {contacts.map((contact) => (
               <TableRow key={contact.id} className="text-black dark:text-white">
                 <TableCell className="font-medium">{contact.id}</TableCell>
-                <TableCell className="">{contact.firstName}</TableCell>
-                <TableCell className="">{contact.lastName}</TableCell>
-                <TableCell className="text-right">{contact.email}</TableCell>
-                <TableCell className="text-center">
+                <TableCell className="text-center">{contact.firstName}</TableCell>
+                <TableCell className="text-center">{contact.lastName}</TableCell>
+                <TableCell className="text-center">{contact.email}</TableCell>
+                <TableCell className="text-center flex justify-center items-center gap-2">
                   <Dialog>
                     <DialogTrigger
                       className="bg-white dark:bg-black dark:text-white mr-2 border rounded-lg hover:border-blue-600 hover:text-blue-900 dark:hover:text-blue-900 p-2"

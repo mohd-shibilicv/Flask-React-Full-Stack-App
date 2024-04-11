@@ -44,7 +44,7 @@ const ContactForm = () => {
       lastName: values.last_name,
       email: values.email,
     };
-    const url = "http://127.0.0.1:5000/create_contact";
+    const url = "https://flask-react-crud-applicatio.onrender.com/create_contact";
     const options = {
       method: "POST",
       headers: {
